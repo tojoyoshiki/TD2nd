@@ -49,6 +49,9 @@ void GameScene::Update() {
 	enemy_->Update();
 	ground_.Update();
 
+	///
+	///ここのifの条件式を、必要に応じて変えればOK！
+	/// 
 	if (Input::GetInstance()->PushKey(DIK_U)) {
 		enemy_->SetState(Enemy::State::red); // 敵の状態をAngryに変更
 	}
@@ -63,6 +66,10 @@ void GameScene::Update() {
 	if (Input::GetInstance()->PushKey(DIK_P)) {
 		enemy_->SetState(Enemy::State::green); // 敵をDeadに変更
 	}
+	///
+	///
+	/// 
+
 
 	if (Input::GetInstance()->PushKey(DIK_1)) {
 		finished_ = true;
