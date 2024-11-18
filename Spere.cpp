@@ -8,16 +8,14 @@ void Spere::Initialize(KamataEngine::Model* model,
 	worldTransform_.Initialize();
 	model_ = model;
 	camera_ = camera;
-	//textureHandle_ = textureHandle;
-	//textureHandle_ = TextureManager::Load("./Resources/uvChecker.png");
-	textureHandle_ = Model::CreateFromOBJ("./Resources/uvChecker.png", true);
 }
 
 void Spere::Update() 
 { 
 }
 
-void Spere::Draw(KamataEngine::Camera* camera) 
+void Spere::Draw(KamataEngine::WorldTransform& worldTransform,
+	KamataEngine::Camera* camera)
 {
-	model_->Draw(worldTransform_, *camera, textureHandle_); 
+	model_->Draw(worldTransform, *camera); 
 }

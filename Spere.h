@@ -11,7 +11,8 @@ public:
 	void Initialize(KamataEngine::Model* model,
 		KamataEngine::Camera* camera);
 	void Update();
-	void Draw(KamataEngine::Camera* camera);
+	void Draw(KamataEngine::WorldTransform& worldTransform_,
+		KamataEngine::Camera* camera);
 
 private:
 	KamataEngine::WorldTransform worldTransform_;

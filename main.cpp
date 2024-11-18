@@ -1,5 +1,8 @@
 #include <KamataEngine.h>
+#include <3d/Camera.h>
+#include <3d/Model.h>
 #include "GameScene.h"
+#include "Spere.h"
 
 using namespace KamataEngine;
 
@@ -14,6 +17,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	PrimitiveDrawer* primitiveDrawer = nullptr;
 
 	GameScene* gameScene = nullptr;
+	Spere* spere = nullptr;
 
 	// ゲームウィンドウの作成
 	win = WinApp::GetInstance();
@@ -53,8 +57,12 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	primitiveDrawer = PrimitiveDrawer::GetInstance();
 	primitiveDrawer->Initialize();
 
-		gameScene = new GameScene();
+	gameScene = new GameScene();
 	gameScene->Initialze();
+
+	spere = new Spere();
+	//spere->Initialize(model_,camera_);
+
 #pragma endregion
 
 	// メインループ
@@ -79,7 +87,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		// 描画開始
 		dxCommon->PreDraw();
 
-				gameScene->Draw();
+		gameScene->Draw();
 
 		// 軸表示の描画
 		axisIndicator->Draw();
